@@ -5,25 +5,35 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
 <style>
-       
+#banner
+  {
+   height: 360px;
+   width:100px;
+   object-fit:cover; 
+  margin-bottom:16px;
+  }
 </style>
 </head>
 <body>
-
-
+{% include 'nav.html' %}
+ <img class="img-fluid" src="https://migz-website--migolski.repl.co/static/pic.jpg" height="320">
     <div class="container">
     <h1 class="text-center mt-2 mb-2">{{company_name}} Careers</h1>
-    <img class="img-fluid" src="https://migz-website--migolski.repl.co/static/pic.jpg" height="320">
-
-    <h2 class="text-center mt-2 mb-4 ">About Migz</h2>
-    <p class="lead" style="">
+   <div class="row" style="margin-bottom:16px;">
+      <div class="col-md-6">
+    <p class="lead">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vulputate enim et venenatis consectetur. Aliquam erat volutpat. Fusce molestie quis ante vitae congue. Integer ligula neque, laoreet ac risus nec, rhoncus tempus leo. Duis non luctus mauris, et facilisis lacus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas luctus mauris odio. Duis tristique a ante tincidunt mattis.
 
-Proin fringilla, mi eget lobortis volutpat, turpis nulla rhoncus ex, sit amet mollis odio elit a quam. Donec vehicula ipsum libero, vitae accumsan magna tincidunt quis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi sem metus, ullamcorper et sollicitudin vel, tincidunt sed ligula. Mauris eu erat orci. Nullam rutrum, risus in congue aliquet, metus nulla luctus dolor, ac lobortis metus elit pretium tortor. In fringilla feugiat convallis. Proin luctus venenatis condimentum. Integer aliquet arcu et arcu rutrum tristique. Vestibulum euismod tempus odio, eget gravida augue viverra ac.
+      Proin fringilla, mi eget lobortis volutpat, turpis nulla rhoncus ex, sit amet mollis odio elit a quam. Donec vehicula ipsum libero, vitae accumsan magna tincidunt quis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi sem metus, ullamcorper et sollicitudin vel, tincidunt sed ligula. Mauris eu erat orci. Nullam rutrum, risus in congue aliquet, metus nulla luctus dolor, ac lobortis metus elit pretium tortor. In fringilla feugiat convallis. Proin luctus venenatis condimentum. 
 
-Vivamus a arcu metus. Mauris accumsan varius sagittis. Integer sodales arcu et ipsum efficitur luctus. Quisque purus lorem, viverra ac convallis hendrerit, lacinia vitae lorem. Proin id urna lacus. Vestibulum vestibulum tempor erat ut lacinia. Maecenas condimentum nisl tortor, eget finibus sem efficitur sit amet. Maecenas vel sodales odio. Aenean a magna nec quam laoreet congue.
     </p>
-
+    </div>
+      
+      <div class="d-none d-md-block col-md-6">
+      <img src="/static/people.jpg" 
+        style="height:320px; border-radius:4px;">
+      </div>
+     </div>
     <h2 class="text-center mt-2 mb-4">Job Openings</h2> 
     <div >
       {% for job in jobs %}
@@ -31,9 +41,10 @@ Vivamus a arcu metus. Mauris accumsan varius sagittis. Integer sodales arcu et i
       {% endfor %}
     </div>
       <div style="text-align:center;">
-    <button class="btn btn-primary btn-lg">Contact Us</button>
-        <p class="mt-4">Copyright 2023, Migz</p>
+    <a href="mailto:migz@careers.ai?subject=Contacts&body=Henlo" class="btn btn-primary btn-lg">Contact Us</a>
+       
       </div>
     </div>
+  {% include 'footer.html' %}
   </body>
 </html>
